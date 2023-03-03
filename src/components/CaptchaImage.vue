@@ -245,7 +245,7 @@ function refresh() {
   drawPic()
 }
 
-function verify(input: string, ignoreCase = false): boolean {
+function validate(input: string, ignoreCase = false): boolean {
   if (ignoreCase) {
     return input.toLowerCase() === verificationCode.value.toLowerCase()
   }
@@ -253,7 +253,7 @@ function verify(input: string, ignoreCase = false): boolean {
 }
 
 defineExpose({
-  verify,
+  validate,
   refresh,
   verificationCode
 })
