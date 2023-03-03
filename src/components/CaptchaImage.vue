@@ -221,7 +221,9 @@ function drawPic() {
   randomCode()
   let canvas = document.getElementById('id-canvas') as HTMLCanvasElement
   let ctx = canvas.getContext('2d')
-  if (!ctx) return
+  if (!ctx) {
+    throw Error('Can not find context!')
+  }
 
   ctx.textBaseline = 'bottom'
   // 繪製背景
