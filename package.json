@@ -1,6 +1,6 @@
 {
   "name": "vue-captcha-code-alpha",
-  "version": "0.1.7",
+  "version": "0.2.1",
   "type": "module",
   "files": [
     "dist"

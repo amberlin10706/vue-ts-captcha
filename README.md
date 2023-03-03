@@ -9,8 +9,9 @@ yarn add vue-captcha-code-alpha
 ```
 <script setup>
 import { CaptchaImage } from "vue-captcha-code-alpha";
+import "vue-captcha-code-alpha/style.css";
 
-const captchaRef = ref();
+const captchaRef = ref<CaptchaImage>()
 
 const verify = () => {
     captchaRef.value.verify("1234")
