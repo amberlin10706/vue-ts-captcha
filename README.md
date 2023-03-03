@@ -5,6 +5,9 @@
 yarn add vue-captcha-code-alpha
 ```
 
+### for vue3 use
+![img.png](https://raw.githubusercontent.com/amberlin10706/vue-ts-captcha/master/img.png)
+
 ### usage
 ```
 <script setup>
