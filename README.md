@@ -1,52 +1,50 @@
-# vue-ts-captcha
+# vue3-captcha-canvas
 
-This template should help get you started developing with Vue 3 in Vite.
+### for vue3 use
+![img.png](https://raw.githubusercontent.com/amberlin10706/vue3-captcha-canvas/master/img.png)
 
-## Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
-
-## Type Support for `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
-
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
-
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
+## install
+```
+yarn add vue3-captcha-canvas
 ```
 
-### Compile and Hot-Reload for Development
+### usage
+```
+<script setup>
+import { CaptchaImage } from "vue3-captcha-canvas";
 
-```sh
-npm run dev
+const captchaRef = ref();
+
+const verify = () => {
+    captchaRef.value.verify("1234")
+}
+</script>
+
+<template>
+    <CaptchaImage ref="captchaRef"/>
+</template>
 ```
 
-### Type-Check, Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Run Unit Tests with [Vitest](https://vitest.dev/)
-
-```sh
-npm run test:unit
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+### props
+| Name               | Type     | Default         | Desp                                                  |
+|--------------------|----------|-----------------|-------------------------------------------------------|
+| codeLength         | Number   | 4               | length of verification code                           |
+| codeType           | String[] | ["A", "a", "0"] | type of verification code A [A-Z] / a [a-z] / 0 [0-9] |
+| contentWidth       | Number   | 120             | captcha width                                         |
+| contentHeight      | Number   | 40              | captcha height                                        |
+| fontSizeMin        | Number   | 24              | minimum font size                                     |
+| fontSizeMax        | Number   | 36              | maximum font size                                     |
+| textColor          | String   | null            | specify text color                                    |
+| textColorMin       | Number   | 50              | minimum text color                                    |
+| textColorMax       | Number   | 160             | maximum text color                                    |
+| textDegMin         | Number   | -30             | minimum text rotation                                 |
+| textDegMax         | Number   | 30              | maximum text rotation                                 |
+| backgroundColor    | String   | null            | specify background color                              |
+| backgroundColorMin | Number   | 200             | minimum background color                              |
+| backgroundColorMax | Number   | 220             | maximum background color                              |
+| dotCount           | Number   | 30              | specify dot count                                     |
+| dotColorMin        | Number   | 0               | minimum dot color                                     |
+| dotColorMax        | Number   | 255             | maximum dot color                                     |
+| lineCount          | Number   | 4               | specify line count                                    |
+| lineColorMin       | Number   | 40              | minimum line color                                    |
+| lineColorMax       | Number   | 180             | maximum line color                                    |
