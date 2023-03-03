@@ -49,6 +49,13 @@ const props = defineProps({
     default: 36
   },
   /**
+   * 指定文字顏色
+   */
+  textColor: {
+    type: String,
+    default: null
+  },
+  /**
    * 文字顏色最小值
    */
   textColorMin: {
@@ -77,6 +84,13 @@ const props = defineProps({
     default: 30
   },
   /**
+   * 指定圖片背景色
+   */
+  backgroundColor: {
+    type: String,
+    default: null
+  },
+  /**
    * 圖片背景色最小值
    */
   backgroundColorMin: {
@@ -95,7 +109,7 @@ const props = defineProps({
    */
   dotCount: {
     type: Number,
-    default: 30
+    default: 20
   },
   /**
    * 干擾點顏色最小值
@@ -178,7 +192,7 @@ function randomCode() {
 
 function drawText(ctx: CanvasRenderingContext2D, txt: string, i: number) {
   // 繪製文字
-  ctx.fillStyle = randomColor(props.textColorMin, props.textColorMax) //隨機生成字型顏色
+  ctx.fillStyle = props.textColor || randomColor(props.textColorMin, props.textColorMax) //隨機生成字型顏色
   ctx.font = 'bold ' + randomNum(props.fontSizeMin, props.fontSizeMax) + 'px Arial' //隨機生成字型大小
 
   const x = i * ((props.contentWidth - 15) / props.codeLength) + 10
@@ -227,7 +241,8 @@ function drawPic() {
 
   ctx.textBaseline = 'bottom'
   // 繪製背景
-  ctx.fillStyle = randomColor(props.backgroundColorMin, props.backgroundColorMax)
+  ctx.fillStyle =
+    props.backgroundColor || randomColor(props.backgroundColorMin, props.backgroundColorMax)
   ctx.fillRect(0, 0, props.contentWidth, props.contentHeight)
 
   for (let i = 0; i < props.codeLength; i++) {
@@ -260,17 +275,17 @@ defineExpose({
 </script>
 
 <template>
-  <div
-    style="user-select: none"
-    :style="refreshable ? { cursor: 'pointer' } : {}"
-    @click="refreshable && refresh()"
-  >
+  <div class="captcha-image" :class="{ clickable: refreshable }" @click="refreshable && refresh()">
     <canvas id="id-canvas" :width="contentWidth" :height="contentHeight"></canvas>
   </div>
 </template>
 
-<script>
-export default {
-  name: 'CaptchaImage'
+<style lang="css" scoped>
+.captcha-image {
+  user-select: none;
 }
-</script>
+
+.captcha-image.clickable {
+  cursor: pointer;
+}
+</style>
