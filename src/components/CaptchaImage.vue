@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { computed, defineExpose, defineProps, onMounted, PropType, ref } from 'vue'
+import { computed, defineExpose, defineProps, onMounted, ref } from 'vue'
+import type { PropType } from 'vue'
 
 type CodeType = 'A' | 'a' | '0'
 
