@@ -1,7 +1,9 @@
 {
-  "name": "@bxhegr/vue-captcha-code",
+  "name": "@bxhegr/vue-captcha-code-alpha",
   "version": "0.1.0",
-  "private": true,
+  "type": "module",
+  "main": "./dist/vue-captcha-code.umd.cjs",
+  "module": "./dist/vue-captcha-code.js",
   "scripts": {
     "dev": "vite",
     "build": "run-p type-check build-only",
