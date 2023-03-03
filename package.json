@@ -1,9 +1,16 @@
 {
-  "name": "@bxhegr/vue-captcha-code-alpha",
-  "version": "0.1.0",
+  "name": "vue-captcha-code-alpha",
+  "version": "0.1.2",
   "type": "module",
-  "main": "./dist/vue-captcha-code.umd.cjs",
-  "module": "./dist/vue-captcha-code.js",
+  "files": ["dist"],
+  "main": "./dist/my-lib.umd.cjs",
+  "module": "./dist/my-lib.js",
+  "exports": {
+    ".": {
+      "import": "./dist/my-lib.js",
+      "require": "./dist/my-lib.umd.cjs"
+    }
+  },
   "scripts": {
     "dev": "vite",
     "build": "run-p type-check build-only",

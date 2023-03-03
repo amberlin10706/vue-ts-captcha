@@ -15,9 +15,9 @@ export default defineConfig({
     lib: {
       // Could also be a dictionary or array of multiple entry points
       entry: resolve(__dirname, 'src/components/index.ts'),
-      name: 'vue-captcha-code',
+      name: 'MyLib',
       // the proper extensions will be added
-      fileName: 'vue-captcha-code'
+      fileName: 'my-lib'
     },
     rollupOptions: {
       // make sure to externalize deps that shouldn't be bundled
