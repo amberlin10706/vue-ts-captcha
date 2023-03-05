@@ -25,7 +25,7 @@ declare module 'vue-captcha-code-alpha' {
 }
 
 export declare type CaptchaImageInstance = {
-  verify(input: string, ignoreCase?: boolean): boolean
+  validate(input: string, ignoreCase?: boolean): boolean
   refresh(): void
   verificationCode: string
 }
