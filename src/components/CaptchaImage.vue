@@ -253,10 +253,6 @@ function drawPic() {
   drawDot(ctx)
 }
 
-onMounted(() => {
-  drawPic()
-})
-
 function refresh() {
   drawPic()
 }
@@ -272,6 +268,10 @@ defineExpose({
   validate,
   refresh,
   verificationCode
+})
+
+onMounted(() => {
+  drawPic()
 })
 </script>
 
