@@ -17,8 +17,8 @@ import type { CaptchaImageInstance } from 'vue-captcha-code-alpha'
 
 const captchaRef = ref<CaptchaImageInstance>()
 
-const verify = () => {
-    captchaRef.value.verify("1234")
+const validate = () => {
+    captchaRef.value.validate("1234")
 }
 </script>
 
